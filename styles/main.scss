@@ -1,0 +1,54 @@
+$appWidth:100%;
+
+html, body{
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Open Sans';
+  font-size: .94em;
+}
+main{
+  width: 60%;
+  height: 90%;
+  margin: auto;
+  margin-top: 50px;
+}
+section{
+  width: 100%;
+  margin: auto;
+}
+ul{
+  padding: 10px 0px;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  background-color: ghostwhite;
+  li{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    :hover{
+      background-color: #fff;
+      cursor: pointer;
+    }
+  }
+}
+a{
+  margin-right: 10px;
+}
+.poemProp{
+  width: $appWidth;
+  background-color: ghostwhite;
+  border: none;
+
+}
+
+footer{
+  width: 60%;
+  margin: auto;
+  margin-bottom: 5px;
+  z-index: 10;
+  div{
+    width: 100px;
+    margin: 0 auto;
+  }
+}

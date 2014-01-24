@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" ng-app="poemreader">
+<head>
+    <meta charset="UTF-8">
+    <title>Poem reader</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic&v1" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css"/>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js'></script>
+    <script src='https://cdn.firebase.com/js/client/1.0.2/firebase.js'></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
+
+    <script src="libraries/angular-sanitize.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+    <main>
+        <section>
+            <header>
+                <nav>
+                    <a href="" ng-repeat="item in navMenu" ng-click="displayItems($index)"><span ng-bind="item.menu"></span></a>
+                </nav>
+            </header>
+            <input type="text" id="" ng-model="search" placeholder="search"/>
+            <ul>
+                <li ng-repeat="poem in poems | orderByPriority | filter:search | unique:'author'">
+                    <button ng-click="displayPoems(poem)" class="poemProp"><span ng-bind="poem.author"></span></button>
+                </li>
+            </ul>
+            <ul>
+                <li ng-repeat="poem in poems | orderByPriority | filter:search | filter:currentAuthor | filter:poem.author">
+                    <button ng-click="displayPoem(poem)" class="poemProp"><span ng-bind="poem.title"></span></button>
+                </li>
+            </ul>
+            <article>
+                <h2 ng-bind="poemTitle"></h2>
+                <span ng-bind-html="poemText"></span>
+                <h5 ng-bind="poemAuthor" id="author"></h5>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <small>©kodjohin</small>
+        </div>
+    </footer>
+    <script src="scripts/poems.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
