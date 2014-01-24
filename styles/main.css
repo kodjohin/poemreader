@@ -1,66 +1,80 @@
-/* line 3, main.scss */
+/* line 4, main.scss */
 html, body {
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  font-family: 'Open Sans';
-  font-size: .94em;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans';
+    font-size: .94em;
+    background-color: whitesmoke;
 }
 
-/* line 10, main.scss */
+/* line 12, main.scss */
 main {
-  width: 60%;
-  height: 90%;
-  margin: auto;
-  margin-top: 50px;
+    width: 500px;
+    margin: auto;
 }
 
 /* line 16, main.scss */
 section {
-  width: 100%;
-  margin: auto;
+    width: 100%;
 }
 
-/* line 20, main.scss */
+/* line 19, main.scss */
+.search {
+    width: 50%;
+    height: 20px;
+    font-size: 1.1em;
+    float: right;
+    border: 1px none;
+    margin-bottom: 5px;
+    margin-right: 4px;
+}
+
+/* line 28, main.scss */
 ul {
-  padding: 10px 0px;
-  margin-bottom: 2px;
-  margin-top: 2px;
-  background-color: ghostwhite;
+    padding: 0px;
+    margin: 4px;
 }
-/* line 25, main.scss */
+/* line 31, main.scss */
 ul li {
-  display: block;
-  margin: 0px;
-  padding: 0px;
+    display: block;
+    margin: 0px;
+    padding: 0px;
 }
-/* line 29, main.scss */
-ul li :hover {
-  background-color: #fff;
-  cursor: pointer;
-}
-
 /* line 35, main.scss */
+ul li :hover {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* line 41, main.scss */
 a {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
-/* line 38, main.scss */
+/* line 44, main.scss */
 .poemProp {
-  width: 100%;
-  background-color: ghostwhite;
-  border: none;
+    width: 100%;
+    background-color: ghostwhite;
+    border: none;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 1em;
 }
 
-/* line 45, main.scss */
-footer {
-  width: 60%;
-  margin: auto;
-  margin-bottom: 5px;
-  z-index: 10;
+/* line 52, main.scss */
+article {
+    width: 400px;
+    margin: auto;
 }
-/* line 50, main.scss */
+
+/* line 56, main.scss */
+footer {
+    width: 100%;
+    background: whitesmoke;
+}
+/* line 59, main.scss */
 footer div {
-  width: 100px;
-  margin: 0 auto;
+    width: 100px;
+    margin: 0 auto;
 }

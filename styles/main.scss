@@ -1,4 +1,5 @@
 $appWidth:100%;
+$bgc:#f5f5f5;
 
 html, body{
   height: 100%;
@@ -6,22 +7,27 @@ html, body{
   padding: 0px;
   font-family: 'Open Sans';
   font-size: .94em;
+  background-color: $bgc;
 }
 main{
-  width: 60%;
-  height: 90%;
+  width: 500px;
   margin: auto;
-  margin-top: 50px;
 }
 section{
   width: 100%;
-  margin: auto;
+}
+.search{
+  width: $appWidth/2;
+  height: 20px;
+  font-size: 1.1em;
+  float: right;
+  border: 1px none;
+  margin-bottom: 5px;
+  margin-right: 4px;
 }
 ul{
-  padding: 10px 0px;
-  margin-bottom: 2px;
-  margin-top: 2px;
-  background-color: ghostwhite;
+  padding:0px;
+  margin: 4px;
   li{
     display: block;
     margin: 0px;
@@ -39,16 +45,23 @@ a{
   width: $appWidth;
   background-color: ghostwhite;
   border: none;
-
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 1em;
 }
-
-footer{
-  width: 60%;
+article{
+  width: 400px;
   margin: auto;
-  margin-bottom: 5px;
-  z-index: 10;
+}
+footer{
+  width:100%;
+  background:$bgc;
   div{
     width: 100px;
     margin: 0 auto;
   }
 }
+
+//#5f9ea0;
+//#cacaca;
+//#008b8b;
