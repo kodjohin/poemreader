@@ -11,37 +11,37 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-sanitize.js"></script>
 </head>
 <body ng-controller="MainCtrl">
-    <main>
-        <section>
-            <header>
-                <nav>
-                    <a href="" ng-repeat="item in navMenu" ng-click="displayItems($index)"><span ng-bind="item.menu"></span></a>
-                </nav>
-            </header>
-            <input type="text" id="" ng-model="search" placeholder="search"/>
-            <ul>
-                <li ng-repeat="poem in poems | orderByPriority | filter:search | unique:'author'">
-                    <button ng-click="displayPoems(poem)" class="poemProp"><span ng-bind="poem.author"></span></button>
-                </li>
-            </ul>
-            <ul>
-                <li ng-repeat="poem in poems | orderByPriority | filter:search | filter:currentAuthor | filter:poem.author">
-                    <button ng-click="displayPoem(poem)" class="poemProp"><span ng-bind="poem.title"></span></button>
-                </li>
-            </ul>
-            <article>
-                <h2 ng-bind="poemTitle"></h2>
-                <span ng-bind-html="poemText"></span>
-                <h5 ng-bind="poemAuthor" id="author"></h5>
-            </article>
-        </section>
-    </main>
-    <footer>
-        <div>
-            <small>©kodjohin</small>
-        </div>
-    </footer>
-    <script src="scripts/poems.js"></script>
-    <script src="scripts/main.js"></script>
+<main>
+    <section>
+        <header>
+            <nav>
+                <a href="" ng-repeat="item in navMenu" ng-click="displayItems($index)"><span ng-bind="item.menu"></span></a>
+            </nav>
+        </header>
+        <input class="search" type="text" id="" ng-model="search" placeholder="Search "/>
+        <ul>
+            <li ng-repeat="poem in poems | orderByPriority | filter:search | unique:'author'">
+                <button ng-click="displayPoems(poem)" class="poemProp"><span ng-bind="poem.author"></span></button>
+            </li>
+        </ul>
+        <ul>
+            <li ng-repeat="poem in poems | orderByPriority | filter:search | filter:currentAuthor | filter:poem.author">
+                <button ng-click="displayPoem(poem)" class="poemProp"><span ng-bind="poem.title"></span></button>
+            </li>
+        </ul>
+        <article>
+            <h2 ng-bind="poemTitle"></h2>
+            <span ng-bind-html="poemText"></span>
+            <h5 ng-bind="poemAuthor" id="author"></h5>
+        </article>
+    </section>
+</main>
+<footer>
+    <div>
+        <small>©kodjohin</small>
+    </div>
+</footer>
+<script src="scripts/poems.js"></script>
+<script src="scripts/main.js"></script>
 </body>
 </html>
