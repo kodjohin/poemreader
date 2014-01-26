@@ -9,27 +9,30 @@
     <script src='https://cdn.firebase.com/js/client/1.0.2/firebase.js'></script>
     <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-sanitize.js"></script>
+    <script src="http://code.angularjs.org/1.2.10/angular-animate.min.js"></script>
 </head>
 <body ng-controller="MainCtrl">
 <main>
     <section>
-        <header>
-            <nav>
-                <a href="" ng-repeat="item in navMenu" ng-click="displayItems($index)"><span ng-bind="item.menu"></span></a>
-            </nav>
-        </header>
         <input class="search" type="text" id="" ng-model="search" placeholder="Search "/>
-        <ul>
-            <li ng-repeat="poem in poems | orderByPriority | filter:search | unique:'author'">
-                <button ng-click="displayPoems(poem)" class="poemProp"><span ng-bind="poem.author"></span></button>
-            </li>
-        </ul>
-        <ul>
-            <li ng-repeat="poem in poems | orderByPriority | filter:search | filter:currentAuthor | filter:poem.author">
-                <button ng-click="displayPoem(poem)" class="poemProp"><span ng-bind="poem.title"></span></button>
-            </li>
-        </ul>
-        <article>
+        <accordion class="accordion">
+            <expander class='expander' ng-repeat='item in navMenu' expander-title='item.menu'>
+                <div ng-switch on="item.name">
+                    <ul ng-switch-when="author">
+                        <li ng-repeat="poem in poems | orderByPriority | filter:search | unique:'author'">
+                            <button ng-click="displayPoems(poem)" class="poemProp"><span ng-bind="poem[item.name]"></span></button>
+                        </li>
+                    </ul>
+                    <ul ng-switch-when="title">
+                        <li ng-repeat="poem in poems | orderByPriority | filter:search | filter:currentAuthor | filter:poem.author">
+                            <button ng-click="displayPoem(poem)" class="poemProp"><span ng-bind="poem.title"></span></button>
+                        </li>
+                    </ul>
+                </div>
+            </expander>
+        </accordion>
+
+        <article ng-show="showPoem">
             <h2 ng-bind="poemTitle"></h2>
             <span ng-bind-html="poemText"></span>
             <h5 ng-bind="poemAuthor" id="author"></h5>
@@ -43,5 +46,6 @@
 </footer>
 <script src="scripts/poems.js"></script>
 <script src="scripts/main.js"></script>
+<script src="scripts/directives.js"></script>
 </body>
 </html>

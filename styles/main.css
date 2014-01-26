@@ -23,36 +23,45 @@ section {
 .search {
     width: 50%;
     height: 20px;
-    font-size: 1.1em;
+    font-size: inherit;
     float: right;
     border: 1px none;
+    margin-top: 10px;
     margin-bottom: 5px;
-    margin-right: 4px;
+    padding-left: 5px;
 }
 
-/* line 28, main.scss */
+/* line 29, main.scss */
+.search:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px #8699a4;
+    -moz-box-shadow: 0px 0px 5px #8699a4;
+    -webkit-box-shadow: 0px 0px 5px #8699a4;
+}
+
+/* line 35, main.scss */
 ul {
     padding: 0px;
     margin: 4px;
 }
-/* line 31, main.scss */
+/* line 38, main.scss */
 ul li {
     display: block;
     margin: 0px;
     padding: 0px;
 }
-/* line 35, main.scss */
+/* line 42, main.scss */
 ul li :hover {
     background-color: #fff;
     cursor: pointer;
 }
-
-/* line 41, main.scss */
-a {
-    margin-right: 10px;
+/* line 46, main.scss */
+ul li :focus {
+    outline: none;
+    background-color: #fff;
 }
 
-/* line 44, main.scss */
+/* line 53, main.scss */
 .poemProp {
     width: 100%;
     background-color: ghostwhite;
@@ -62,19 +71,52 @@ a {
     font-size: 1em;
 }
 
-/* line 52, main.scss */
+/* line 61, main.scss */
 article {
     width: 400px;
     margin: auto;
 }
 
-/* line 56, main.scss */
+/* line 65, main.scss */
 footer {
+    position: fixed;
+    bottom: 0px;
+    padding-bottom: 5px;
     width: 100%;
     background: whitesmoke;
 }
-/* line 59, main.scss */
+/* line 71, main.scss */
 footer div {
     width: 100px;
     margin: 0 auto;
+}
+
+/* line 76, main.scss */
+.accordion {
+    clear: both;
+}
+
+/* line 79, main.scss */
+.expander {
+    width: 100%;
+    margin-top: 1px;
+}
+
+/* line 83, main.scss */
+.expander > .title {
+    background-color: black;
+    color: #fff;
+    padding: .1em .3em;
+    cursor: pointer;
+}
+
+/* line 89, main.scss */
+.expander > .body {
+    background-color: #eeeeff;
+    width: 100%;
+}
+
+/* line 93, main.scss */
+.closed {
+    display: none;
 }

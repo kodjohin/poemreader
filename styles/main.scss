@@ -19,11 +19,18 @@ section{
 .search{
   width: $appWidth/2;
   height: 20px;
-  font-size: 1.1em;
+  font-size: inherit;
   float: right;
   border: 1px none;
-  margin-bottom: 5px;
-  margin-right: 4px;
+  margin-top:10px;
+  margin-bottom:5px;
+  padding-left: 5px;
+}
+.search:focus{
+  outline: none;
+  box-shadow: 0px 0px 5px #8699a4;
+  -moz-box-shadow: 0px 0px 5px #8699a4;
+  -webkit-box-shadow: 0px 0px 5px #8699a4;
 }
 ul{
   padding:0px;
@@ -36,11 +43,13 @@ ul{
       background-color: #fff;
       cursor: pointer;
     }
+    :focus{
+      outline:none;
+      background-color: #fff;
+    }
   }
 }
-a{
-  margin-right: 10px;
-}
+
 .poemProp{
   width: $appWidth;
   background-color: ghostwhite;
@@ -54,6 +63,9 @@ article{
   margin: auto;
 }
 footer{
+  position: fixed;
+  bottom: 0px;
+  padding-bottom: 5px;
   width:100%;
   background:$bgc;
   div{
@@ -61,7 +73,24 @@ footer{
     margin: 0 auto;
   }
 }
+.accordion{
+  clear: both;
+}
+.expander {
+  width: 100%;
+  margin-top: 1px;
+}
+.expander > .title {
+  background-color: black;
+  color: #fff;
+  padding: .1em .3em;
+  cursor: pointer;
+}
+.expander > .body {
+  background-color: #eeeeff;
+  width: 100%;
+}
+.closed {
+  display: none;
+}
 
-//#5f9ea0;
-//#cacaca;
-//#008b8b;
